@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Page</title>
+
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #e0e0e0; /* Gray background */
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .form-signin {
+      max-width: 300px;
+      width: 100%;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .form-signin .form-floating:focus-within {
+      z-index: 2;
+    }
+
+    .form-signin input[type="email"] {
+      margin-bottom: -1px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      text-align: center;
+    }
+
+    .form-signin input[type="password"] {
+      margin-bottom: 10px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      text-align: center;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px;
+      box-sizing: border-box;
+    }
+
+    .form-floating {
+      margin-bottom: 10px;
+    }
+
+    .form-floating label {
+      display: block;
+      margin-bottom: 5px;
+      text-align: center;
+    }
+
+    .form-check {
+      text-align: center;
+      margin: 15px 0;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #0d6efd;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background-color: #0b5ed7;
+    }
+
+    .text-body-secondary {
+      color: #6c757d;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="form-signin">
+    <form class="form-singin" method="POST" action="/login/" >
+       {% csrf_token %}
+
+      <h1>Please Sign In</h1>
+
+      <div class="form-floating">
+        <label for="floatingInput">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          id="floatingInput"
+          name="username"
+          placeholder="Username"
+        />
+      </div>
+
+      <div class="form-floating">
+        <label for="floatingPassword">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="floatingPassword"
+          name="password"
+          placeholder="Password"
+        />
+      </div>
+
+      <div class="form-check">
+        <input
+          type="checkbox"
+          value="remember-me"
+          id="checkDefault"
+          name="remember"
+        />
+        <label for="checkDefault">Remember me</label>
+      </div>
+
+      <button class="btn" type="submit">
+        Sign In
+      </button>
+
+      <p class="text-body-secondary">&copy; 2017–2025</p>
+
+    </form>
+  </main>
+
+</body>
+</html>
